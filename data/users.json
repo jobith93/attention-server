@@ -1,0 +1,43 @@
+[{
+        "username": "shashikumar",
+        "name"    : "Shashikumar C",
+        "email"   : "shashikumar@mail.com",
+        "image" : "shashikumar.jpg"
+    },
+    {
+        "username": "jobith",
+        "name"    : "Jobith M Basheer",
+        "email"   : "jobith@mail.com",
+        "image" : "jobith.jpg"
+    },
+    {
+        "username": "sam",
+        "name"    : "Sam Thomas",
+        "email"   : "sam@mail.com",
+        "image" : "sam.png"
+    },
+    {
+        "username": "abel",
+        "name"    : "Abel Sam",
+        "email"   : "abel@mail.com",
+        "image" : "abel.png"
+    },
+    {
+        "username": "nidhish",
+        "name"    : "Nidhish PP",
+        "email"   : "nidhish@mail.com",
+        "image" : "nidhish.png"
+    },
+    {
+        "username": "abhilash",
+        "name"    : "Abhilash M",
+        "email"   : "abhilsh@mail.com",
+        "image" : "abhilash.png"
+    },
+    {
+        "username": "amareesh",
+        "name"    : "Amareesh BP",
+        "email"   : "amareesh@mail.com",
+        "image" : "amareesh.png"
+    }
+]
