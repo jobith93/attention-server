@@ -9,7 +9,6 @@ var cors = require('cors')
 
 // data
 var users = require('./data/users.json')
-
 var connected = [];
 
 // enable cors
@@ -37,8 +36,8 @@ io.on('connection', function(socket){
         });
     }
         
-
     console.log(`${name} connected  ✅`)
+
     // Receive ping event with data:
     socket.on('ping user', function(data) {
         let sender = users.find((user) => user.username == data.sender)
@@ -61,8 +60,7 @@ io.on('connection', function(socket){
             });
         }
         
-        
-    });
+    })
     
 
     socket.on('disconnect', function(socket){
@@ -87,6 +85,7 @@ app.get('/users', (req, res) => {
         user.profile_picture = `${req.protocol}://${req.headers.host}/static/images/${user.image}`
         user.status = (connected.indexOf(user.username) >= 0) ? 'online' : 'offline'
     })
+
     res.json({users, connected});
 })
 
