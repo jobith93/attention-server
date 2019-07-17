@@ -30,7 +30,8 @@ io.on('connection', function(socket){
 
     if(socket.handshake.query['username']){
         var name = socket.handshake.query['username'];
-        connected.push(name)
+        if(connected.indexOf(name) < 0)
+            connected.push(name)
         socket.on('set-name', function(_name) {
             name = _name;
         });
@@ -48,7 +49,7 @@ io.on('connection', function(socket){
             io.emit('ping user', {
                 sender,
                 receiver,
-                message : `${data.sender.name} wishes to grab your attention!`
+                message : `${sender.name} wishes to grab your attention!`
             });
         }
         else{
