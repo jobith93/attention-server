@@ -37,6 +37,8 @@ io.on('connection', function(socket){
     }
         
     console.log(`${name} connected  ✅`)
+    console.log(`Online Users: ${connected.join(', ').trimRight(', ')}`);
+
 
     // Receive ping event with data:
     socket.on('ping user', function(data) {
@@ -65,9 +67,7 @@ io.on('connection', function(socket){
 
     socket.on('disconnect', function(socket){
         console.log(`${name} disconnected ❌`)
-        connected.splice(connected.indexOf(name),1)
-        console.log(connected.join('__()__'));
-        
+        connected.splice(connected.indexOf(name), 1)
     })
 })
 
