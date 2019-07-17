@@ -1,43 +1,50 @@
-[{
+[
+    {
         "username": "shashikumar",
         "name"    : "Shashikumar C",
-        "email"   : "shashikumar@mail.com",
-        "image" : "shashikumar.jpg"
+        "email"   : "shashikumar@three38inc.com",
+        "image"   : "shashikumar.jpg"
     },
     {
         "username": "jobith",
         "name"    : "Jobith M Basheer",
-        "email"   : "jobith@mail.com",
-        "image" : "jobith.jpg"
+        "email"   : "jobith@three38inc.com",
+        "image"   : "jobith.jpg"
     },
     {
         "username": "sam",
         "name"    : "Sam Thomas",
-        "email"   : "sam@mail.com",
-        "image" : "sam.png"
+        "email"   : "sam@three38inc.com",
+        "image"   : "sam.png"
     },
     {
         "username": "abel",
         "name"    : "Abel Sam",
-        "email"   : "abel@mail.com",
-        "image" : "abel.png"
+        "email"   : "abel@three38inc.com",
+        "image"   : "abel.png"
     },
     {
         "username": "nidhish",
         "name"    : "Nidhish PP",
-        "email"   : "nidhish@mail.com",
-        "image" : "nidhish.png"
-    },
-    {
-        "username": "abhilash",
-        "name"    : "Abhilash M",
-        "email"   : "abhilsh@mail.com",
-        "image" : "abhilash.png"
+        "email"   : "nidhish@three38inc.com",
+        "image"   : "nidhish.png"
     },
     {
         "username": "amareesh",
         "name"    : "Amareesh BP",
-        "email"   : "amareesh@mail.com",
-        "image" : "amareesh.png"
+        "email"   : "amareesh@three38inc.com",
+        "image"   : "amareesh.png"
+    },
+    {
+        "username": "chris",
+        "name"    : "Chris Thomas",
+        "email"   : "chris@three38inc.com",
+        "image"   : "chris.png"
+    },
+    {
+        "username": "dolwin",
+        "name"    : "Dolwin Davis",
+        "email"   : "dolwin@three38inc.com",
+        "image"   : "dolwin.png"
     }
 ]

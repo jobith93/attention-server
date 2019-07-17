@@ -10,6 +10,7 @@ var cors = require('cors')
 // data
 var users = require('./data/users.json')
 
+var connected = [];
 
 // enable cors
 app.use(cors())
@@ -27,7 +28,15 @@ socketServer.listen(3002, function(){
 /* This event will emit when client connects to the socket server */
 io.on('connection', function(socket){
 
-    console.log(`Client connected  ✅`)
+    if(socket.handshake.query['username'])
+        connected.push(socket.handshake.query['username'])
+
+    var name = socket.handshake.query['username'];
+    socket.on('set-name', function(_name) {
+        name = _name;
+    });
+
+    console.log(`${socket.handshake.query['username']} connected  ✅`)
 
     // Receive ping event with data:
     socket.on('ping user', function(data) {
@@ -42,8 +51,9 @@ io.on('connection', function(socket){
     });
     
 
-    socket.on('disconnect', function(){
-        console.log('Socket is disconnected ❌')
+    socket.on('disconnect', function(socket){
+        console.log(`${name} disconnected ❌`)
+        connected.splice(connected.indexOf(),1)
     })
 })
 
@@ -63,9 +73,11 @@ app.get('/', (req, res) => {
 app.get('/users', (req, res) => {
     users.forEach((user) => {
         user.profile_picture = `${req.protocol}://${req.headers.host}/static/images/${user.image}`
+        user.status = (connected.indexOf(user.username) >= 0) ? 'online' : 'offline'
     })
     res.json(users);
 })
+
 
 /* Node application will be running on 3000 port */
 server.listen(3000)
