@@ -37,7 +37,7 @@ io.on('connection', function(socket){
     }
         
 
-    console.log(`${socket.handshake.query['username']} connected  ✅`)
+    console.log(`${name} connected  ✅`)
     // Receive ping event with data:
     socket.on('ping user', function(data) {
         let sender = users.find((user) => user.username == data.sender)
@@ -69,8 +69,6 @@ io.on('connection', function(socket){
         connected.splice(connected.indexOf(),1)
     })
 })
-
-
 
 
 /* Create HTTP server for node application */
