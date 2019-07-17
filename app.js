@@ -28,16 +28,16 @@ socketServer.listen(3002, function(){
 /* This event will emit when client connects to the socket server */
 io.on('connection', function(socket){
 
-    if(socket.handshake.query['username'])
-        connected.push(socket.handshake.query['username'])
-
-    var name = socket.handshake.query['username'];
-    socket.on('set-name', function(_name) {
-        name = _name;
-    });
+    if(socket.handshake.query['username']){
+        var name = socket.handshake.query['username'];
+        connected.push(name)
+        socket.on('set-name', function(_name) {
+            name = _name;
+        });
+    }
+        
 
     console.log(`${socket.handshake.query['username']} connected  ✅`)
-
     // Receive ping event with data:
     socket.on('ping user', function(data) {
         let sender = users.find((user) => user.username == data.sender)
@@ -88,7 +88,7 @@ app.get('/users', (req, res) => {
         user.profile_picture = `${req.protocol}://${req.headers.host}/static/images/${user.image}`
         user.status = (connected.indexOf(user.username) >= 0) ? 'online' : 'offline'
     })
-    res.json(users);
+    res.json({users, connected});
 })
 
 
