@@ -46,5 +46,11 @@
         "name"    : "Dolwin Davis",
         "email"   : "dolwin@three38inc.com",
         "image"   : "dolwin.png"
+    },
+    {
+        "username": "tanmay",
+        "name"    : "Tanmay Shinde",
+        "email"   : "tanmay@three38inc.com",
+        "image"   : "tanmay.png"
     }
 ]
