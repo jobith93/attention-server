@@ -29,15 +29,15 @@ io.on('connection', function(socket){
 
     if(socket.handshake.query['username']){
         var name = socket.handshake.query['username'];
-        if(connected.indexOf(name) < 0)
-            connected.push(name)
+        // if(connected.indexOf(name) < 0)
+        //     connected.push(name)
         socket.on('set-name', function(_name) {
             name = _name;
         });
     }
         
     console.log(`${name} connected  ✅`)
-    console.log(`Online Users: ${connected.join(', ').trimRight(', ')}`);
+    // console.log(`Online Users: ${connected.join(', ').trimRight(', ')}`);
 
 
     // Receive ping event with data:
@@ -45,29 +45,36 @@ io.on('connection', function(socket){
         let sender = users.find((user) => user.username == data.sender)
         let receiver = users.find((user) => user.username == data.receiver)
 
-        if(connected.indexOf(receiver.username) >= 0){
-            console.log(`${data.sender} wants to ping ${data.receiver} - online`)
-            io.emit('ping user', {
-                sender,
-                receiver,
-                message : `${sender.name} wishes to grab your attention!`
-            });
-        }
-        else{
-            console.log(`${data.sender} wants to ping ${data.receiver} - offline`)
-            io.emit('ping user', {
-                sender: receiver,
-                receiver: sender,
-                message : `Sorry, ${receiver.name} is Offline!`
-            });
-        }
+        console.log(`${data.sender} wants to ping ${data.receiver} - online`)
+        io.emit('ping user', {
+            sender,
+            receiver,
+            message : `${sender.name} wishes to grab your attention!`
+        });
+
+        // if(connected.indexOf(receiver.username) >= 0){
+        //     console.log(`${data.sender} wants to ping ${data.receiver} - online`)
+        //     io.emit('ping user', {
+        //         sender,
+        //         receiver,
+        //         message : `${sender.name} wishes to grab your attention!`
+        //     });
+        // }
+        // else{
+        //     console.log(`${data.sender} wants to ping ${data.receiver} - offline`)
+        //     io.emit('ping user', {
+        //         sender: receiver,
+        //         receiver: sender,
+        //         message : `Sorry, ${receiver.name} is Offline!`
+        //     });
+        // }
         
     })
     
 
     socket.on('disconnect', function(socket){
         console.log(`${name} disconnected ❌`)
-        connected.splice(connected.indexOf(name), 1)
+        // connected.splice(connected.indexOf(name), 1)
     })
 })
 
@@ -85,10 +92,11 @@ app.get('/', (req, res) => {
 app.get('/users', (req, res) => {
     users.forEach((user) => {
         user.profile_picture = `${req.protocol}://${req.headers.host}/static/images/${user.image}`
-        user.status = (connected.indexOf(user.username) >= 0) ? 'online' : 'offline'
+        // user.status = (connected.indexOf(user.username) >= 0) ? 'online' : 'offline'
     })
 
-    res.json({users, connected});
+    // res.json({users, connected});
+    res.json({users});
 })
 
 
