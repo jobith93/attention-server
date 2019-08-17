@@ -41,12 +41,12 @@ io.on('connection', function(socket){
 
 
     // Receive ping event with data:
-    socket.on('ping user', function(data) {
+    socket.on('pingUser', function(data) {
         let sender = users.find((user) => user.username == data.sender)
         let receiver = users.find((user) => user.username == data.receiver)
 
         console.log(`${data.sender} wants to ping ${data.receiver} - online`)
-        io.emit('ping user', {
+        io.emit('pingUser', {
             sender,
             receiver,
             message : `${sender.name} wishes to grab your attention!`
@@ -54,7 +54,7 @@ io.on('connection', function(socket){
 
         // if(connected.indexOf(receiver.username) >= 0){
         //     console.log(`${data.sender} wants to ping ${data.receiver} - online`)
-        //     io.emit('ping user', {
+        //     io.emit('pingUser', {
         //         sender,
         //         receiver,
         //         message : `${sender.name} wishes to grab your attention!`
@@ -62,7 +62,7 @@ io.on('connection', function(socket){
         // }
         // else{
         //     console.log(`${data.sender} wants to ping ${data.receiver} - offline`)
-        //     io.emit('ping user', {
+        //     io.emit('pingUser', {
         //         sender: receiver,
         //         receiver: sender,
         //         message : `Sorry, ${receiver.name} is Offline!`
