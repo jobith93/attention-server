@@ -52,5 +52,29 @@
         "name"    : "Tanmay Shinde",
         "email"   : "tanmay@three38inc.com",
         "image"   : "tanmay.png"
+    },
+    {
+        "username": "abin",
+        "name"    : "Abin Joseph",
+        "email"   : "abin@three38inc.com",
+        "image"   : "abin.png"
+    },
+    {
+        "username": "beula",
+        "name"    : "Beula Kumari J",
+        "email"   : "beula@three38inc.com",
+        "image"   : "beula.png"
+    },
+    {
+        "username": "james",
+        "name"    : "James Thomas",
+        "email"   : "james@three38inc.com",
+        "image"   : "james.png"
+    },
+    {
+        "username": "roshine",
+        "name"    : "Roshine Prakash",
+        "email"   : "roshine@three38inc.com",
+        "image"   : "roshine.png"
     }
 ]
