@@ -18,12 +18,6 @@
         "image"   : "sam.png"
     },
     {
-        "username": "abel",
-        "name"    : "Abel Sam",
-        "email"   : "abel@three38inc.com",
-        "image"   : "abel.png"
-    },
-    {
         "username": "nidhish",
         "name"    : "Nidhish PP",
         "email"   : "nidhish@three38inc.com",
@@ -42,33 +36,15 @@
         "image"   : "dolwin.png"
     },
     {
-        "username": "tanmay",
-        "name"    : "Tanmay Shinde",
-        "email"   : "tanmay@three38inc.com",
-        "image"   : "tanmay.png"
-    },
-    {
-        "username": "abin",
-        "name"    : "Abin Joseph",
-        "email"   : "abin@three38inc.com",
-        "image"   : "abin.png"
-    },
-    {
-        "username": "beula",
-        "name"    : "Beula Kumari J",
-        "email"   : "beula@three38inc.com",
-        "image"   : "beula.png"
-    },
-    {
         "username": "james",
         "name"    : "James Thomas",
         "email"   : "james@three38inc.com",
         "image"   : "james.png"
     },
     {
-        "username": "roshine",
-        "name"    : "Roshine Prakash",
-        "email"   : "roshine@three38inc.com",
-        "image"   : "roshine.png"
+        "username": "haritha",
+        "name"    : "Haritha Nair",
+        "email"   : "haritha@three38inc.com",
+        "image"   : "haritha.png"
     }
 ]
